@@ -7,7 +7,7 @@
 <body>
     <?php
     $servername = "localhost";
-    $database = "taller";
+    $database = "frutas";
     $username = "root";
     $password = "";
 

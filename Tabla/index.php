@@ -1,11 +1,10 @@
 <?php
-$servername = "localhost";
-$database = "taller";
-$username = "root";
-$password = "";
+    $servername = 'localhost';
+    $database = 'frutas';
+    $username = 'root';
+    $password = '';
 
-$conn = mysqli_connect($servername,$username,$password,$database);
-
+    $conn = mysqli_connect($servername,$username,$password,$database);
 ?>
 
 <!DOCTYPE html>
@@ -39,23 +38,25 @@ $conn = mysqli_connect($servername,$username,$password,$database);
                             <th>TIPO</th>
                             <th>COLOR</th>
                         </thead>
-                        <?php
-                        $sql="SELECT * FROM frutas";
-                        $result = mysqli_query($conn,$sql);
-                        
-                        if (mysqli_num_rows($result) > 0){
-                            while ($row = mysqli_fetch_assoc($result)){
-                                	echo "<tr>
-                                            <td>".$row["nombre"]."</td>
-                                            <td>".$row["tipo"]."</td>
-                                            <td>".$row["color"]."</td>
-                                          </tr>";
-                            }
-                        }else{
-                            echo "No hubo resultados";
-                        }
-                        mysqli_close($conn);
-                        ?>
+                            <?php
+                                $sql="SELECT * FROM frutas";
+                                $result = mysqli_query($conn,$sql);
+
+
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo " 
+                                            <tr>
+                                                <td>" . $row["Nombre"] . "</td>
+                                                <td>" . $row["Tipo"] . "</td>
+                                                <td>" . $row["Color"] . "</td>
+                                            </tr> ";
+                                }
+                            }   else {
+                                    echo "No hubo resultados";
+                                } 
+                                mysqli_close($conn);
+                            ?>
                     </table>
                 </div>
             </div>
